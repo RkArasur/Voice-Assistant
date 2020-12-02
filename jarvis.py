@@ -12,11 +12,13 @@ engine = pyttsx3.init('sapi5')
 voices = engine.getProperty('voices')
 #print(voices[1].id)
 voices = engine.setProperty('voices',voices[1].id)
-mail_address ={'shashank':"shashankk.17.beis@acharya.ac.in", 'megha':'meghaarasuru@gmail.com', 'sachin':'sachin.17.beis@acharya.ac.in', 'monisha': 'monishavishu1999@gmail.com', 'shashi' : 'shashikumar.17.beis@acharya.ac.in','sanjana':'sanjanabm.17.beis@acharya.ac.in'}
+mail_address ={'example':'examples mail adress'}
 #method to speak
 def speak(audio):
     engine.say(audio)
     engine.runAndWait()
+    #before running this install the whl file by running command "pip install <filename with extension>"
+    #I have attached the audio whl file also
 
 #method to wish
 def wishMe():
@@ -51,8 +53,8 @@ def sendMail(to, content):
     server = smtplib.SMTP('smtp.gmail.com',587)
     server.ehlo()
     server.starttls()
-    server.login("ravikiranarasur4all@gmail.com","RkMkPkTk412")
-    server.sendmail("ravikiranararasur4all@gmail.com",to,content)
+    server.login("yourmail-id","your password")
+    server.sendmail("your mail-id",to,content)
     server.close()
 
 
@@ -78,7 +80,7 @@ if __name__ == "__main__":
             webbrowser.open('instagram.com')
 
         elif 'play music' in query:
-            mdir = "D://rk//kirik party"
+            mdir = "complete directory path where it contains music"
             songs = os.listdir(mdir)
             n = random.randint(0,len(songs))
             os.startfile(os.path.join(mdir, songs[n]))
@@ -92,7 +94,7 @@ if __name__ == "__main__":
             speak("The date is "+str(date)) 
         
         elif 'open VS Code' in query:
-            pat = "C:\\Users\\RavikiranArasur\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe"
+            pat = "C:\\Users\\RavikiranArasur\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe" #Location of vscode
             os.startfile(pat)
     
         elif 'open chrome' in query:
